@@ -8,6 +8,22 @@ and open the template in the editor.
     Author     : allenmuy
 */
 
+body {
+  padding-top: 100px;
+}
+
+.first-navbar{
+  height: 100px;
+}
+
+.second-navbar{
+  top: 100px;
+}
+
+#groupmembers {
+  padding-top: 80px;
+}
+
 #groupmembers h1 {
   text-align: center;
 }
@@ -28,3 +44,6 @@ and open the template in the editor.
   background-color: #78d170;
 }
 
+#invisible {
+  color: white;
+}
