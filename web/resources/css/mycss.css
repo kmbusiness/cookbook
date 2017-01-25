@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 29, 2016, 11:22:05 AM
+    Author     : allenmuy
+*/
+
+#groupmembers h1 {
+  text-align: center;
+}
+
+#fire {
+  background-color: #f46242;
+}
+
+#wind {
+  background-color: #e0e0e0;
+}
+
+#water {
+  background-color: #32a2f2;
+}
+
+#earth {
+  background-color: #78d170;
+}
+
