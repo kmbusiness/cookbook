@@ -1,0 +1,124 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 29, 2016, 11:22:05 AM
+    Author     : allenmuy
+*/
+
+body {
+  padding-top: 100px;
+}
+
+.first-navbar {
+  height: 100px;
+  z-index: 1031;
+}
+
+.first-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.second-navbar {
+  top: 100px;
+}
+
+.second-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.img-inline {
+    text-align: center;
+}
+
+/*.navbar-nav.nav-justified > li {
+    float:none;
+}*/
+
+.img-inline .navbar-nav {
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-custom>li {       
+    display: inline-block;
+    float: none;
+}
+
+.navbar-collapse.in { 
+  background-color: yellow;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: transparent;
+}
+
+.navbar-form .form-control {
+  width: 600px;
+}
+
+.nav-button {
+  border-color: transparent;
+  background-color: transparent;
+  padding: 0;
+  color: white;
+}
+
+#content {
+  padding-top: 80px;
+}
+
+.custom-boxes .panel {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.custom-boxes .panel-body {
+  height: 200px;
+}
+
+.custom-boxes .panel-footer {
+  background-color: #fff;
+  border-top: 0;
+}
+
+.custom-boxes .col-sm-3 {
+  padding: 0;
+}
+
+@media screen and (min-width: 780px) {
+  .first-container {
+    width: 950px;
+  }
+}
+
+@media screen and (min-width: 1045px) {
+  .first-container {
+    width: 1150px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .first-container {
+    width: 1185px;
+  }
+}
+
+/*@media screen and (min-width: 500px) {
+  .second-container {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .second-container {
+    width: 500px;
+  }
+}*/
+
+
+
