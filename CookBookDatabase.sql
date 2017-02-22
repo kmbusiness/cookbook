@@ -3,7 +3,7 @@ Create TABLE Owner
     firstName VARCHAR(25), 
     lastName VARCHAR(25), 
     email VARCHAR (50), 
-    userName VARCHAR (30) PRIMARY KEY, 
+    userName VARCHAR (30) PRIMARY KEY
 );
 
 Create Table Recipe 
