@@ -25,10 +25,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="navbar-brand logo"><h:link value="Mary's Recipe Collection" outcome="index"/></div>
+          <div class="navbar-brand logo"><h:link value="Mary's Recipe Collection" outcome="home"/></div>
         </div>
         <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-left">
+          <form class="navbar-form1 navbar-form navbar-left">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search"></input>
             </div>
@@ -36,7 +36,18 @@
           </form>  
           <ul class="nav navbar-nav">
               <li>
-                <button type="button" class="log-in btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Log In</button>
+                <div class="dropdown">
+                  <button type="button" class="create btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Your Recipes &nbsp;<span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><h:link value="Create a Recipe" outcome="recipe-form"/></li>
+                    <li><a href="#">Edit a Recipe</a></li>
+                    <li><a href="#">View All Recipes</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" class="log-out btn btn-primary">Log Out</button>
               </li>
           </ul>
                 
@@ -58,30 +69,6 @@
               </div>
         </div>
     </div>
-<!--modal-->
-      <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-             <div id="test">   
-              <h2>Login Form</h2>
-              <form method="post" action="validation.jsp">
-                <div class="container">
-                  <label><b>Username</b></label>
-                  <input type="text" placeholder="Enter Username" name="username" required="required"/>
-                  <label><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="password" required="required"/>
-                  <button type="submit">Login</button>
-                  <input type="checkbox" checked="checked"/> Remember me
-                </div>
-              </form>
-              </div>
-            <div class="modal-footer">
-              
-              <button type="button" class="cancelbtn" data-dismiss="modal">Cancel</button>
-            </div>      
-          </div>
-        </div>
-      </div>
 <!--row 1-->
       <div id="content" class="container-fluid custom-boxes custom-image">
         <div class="row">

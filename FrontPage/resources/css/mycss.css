@@ -12,6 +12,15 @@ body {
   padding-top: 100px;
 }
 
+.logo a {
+  color: white;
+  
+}
+
+.logo a:hover {
+  text-decoration: none;
+}
+
 .first-navbar {
   height: 100px;
   z-index: 1031;
@@ -24,6 +33,7 @@ body {
 
 .second-navbar {
   top: 100px;
+  margin-bottom: 0;
 }
 
 .second-container {
@@ -49,6 +59,10 @@ body {
     float: none;
 }
 
+.navbar-default .navbar-nav>li>a {
+  color: black;
+}
+
 .navbar-collapse.in { 
   background-color: yellow;
 }
@@ -58,7 +72,17 @@ body {
 }
 
 .navbar-form .form-control {
-  width: 600px;
+  width: 45em;
+  height: 5em;
+}
+
+.navbar-form1 .form-control {
+  width: 38em;
+  height: 5em;
+}
+
+.navbar-header {
+  margin-top: 23px;
 }
 
 .nav-button {
@@ -68,26 +92,279 @@ body {
   color: white;
 }
 
+.nav-button:hover{
+  background-color: blueviolet;
+  padding: 10px;
+  color: white;
+  border: none;
+}
+
+.log-in {
+  padding: 39px;
+  width: 123px;
+  border-radius: 0;
+  
+}
+
+.log-out {
+  padding: 39px;
+  width: 123px;
+  border-radius: 0;
+}
+
+.create {
+    background: #b77733;
+    border-color: #b77733;
+    padding: 39px;
+    border-radius: 0;
+}
+.create:hover {
+  background-color: #633e17;
+  border-color: #633e17;
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+  background-color: #633e17;
+  border-color: #633e17;
+}
+
 #content {
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 .custom-boxes .panel {
   border-radius: 0;
   margin-bottom: 0;
+  height: 275px;
+}
+
+.custom-boxes .panel-default {
+  border-color: transparent;
 }
 
 .custom-boxes .panel-body {
   height: 200px;
+  padding: 0;
+  z-index: -1;
+
 }
 
 .custom-boxes .panel-footer {
   background-color: #fff;
   border-top: 0;
+  color: white;
+  font-family: 'Baloo', cursive;
+/*  box-shadow: inset 10px -116px 48px -70px rgba(0,0,0,0.75);*/
 }
 
 .custom-boxes .col-sm-3 {
   padding: 0;
+}
+
+.custom-image img {
+  width: 321px;
+  height: 274px;
+  
+
+}
+
+.panel-footer a {
+  color: white;
+  -webkit-text-stroke: 1.5px black;
+}
+#test h2 {
+      padding-left: 15px;
+}
+
+#test form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#test button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    display: block;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+.recipe-title {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  top: 5%;
+  display: block;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 35px;
+  font-family: 'Baloo', cursive;
+  text-decoration: none;
+  text-align: center;
+}
+
+.recipe-title a:hover {
+  text-decoration: none;
+}
+
+.custom-image span {
+  position: absolute;
+  left: 0;
+  bottom: 25%;
+  z-index: 1;
+  display: block;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  font-family: 'Baloo', cursive;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  opacity: 0;
+}
+
+.custom-image figure {
+  background: black;
+}
+
+.custom-image figure:hover+span {
+  opacity: 1;
+}
+
+.custom-image a {
+  color: white;
+  -webkit-text-stroke: 1.5px black;
+}
+
+.custom-image figure img {
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.custom-image figure:hover img {
+  opacity: .5;
+
+}
+
+#myFooter{
+    padding-top:32px;
+}
+
+#myFooter .container{
+    text-align: center;
+}
+
+#myFooter .footer-copyright{
+    margin-bottom: 35px;
+    text-align: center;
+    color: #777;
+}
+
+#myFooter ul{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 18px;
+}
+
+#myFooter a{
+    color: #282b2d;
+    font-size: 18px;
+}
+
+#myFooter li{
+    display: inline-block;
+    margin: 0px 15px;
+    line-height: 2;
+}
+
+#myFooter .footer-social{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #eee;
+}
+
+#myFooter .fa{
+    font-size: 36px;
+    margin-right: 15px;
+    margin-left: 20px;
+    background-color: white;
+    color: #d0d0d0;
+    border-radius: 51%;
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 43px;
+    text-decoration: none;
+    transition:color 0.2s;
+}
+
+#myFooter .fa-facebook:hover{
+   color: #2b55ff;
+}
+
+#myFooter .fa-facebook:focus{
+    color: #2b55ff; 
+}
+
+#myFooter .fa-google-plus:hover{
+    color:red;
+}
+
+#myFooter .fa-google-plus:focus{
+    color:red;
+}
+
+#myFooter .fa-twitter:hover{
+    color: #00aced;
+
+}
+
+#myFooter .fa-twitter:focus{
+    color:#00aced;
 }
 
 @media screen and (min-width: 780px) {
