@@ -12,17 +12,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.io.Serializable;
+import java.util.Map;
+import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Haba
  */
 @ManagedBean(name = "RecipeManager")
-@SessionScoped
-public class RecipeManager {
+@RequestScoped
+public class RecipeManager implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
+    
     int max = 0, rows = 0;
     List<Recipe> recs = new ArrayList<>();
     PreparedStatement ps = null;
@@ -86,9 +93,11 @@ public class RecipeManager {
     }
     
     public String getView(String name) {
-        
-        name = name.replaceAll("\\s",""); 
-        myName = name;
+        FacesContext fc = FacesContext.getCurrentInstance();
+        myName = fc.getExternalContext().getRequestParameterMap().get("book");
+//        myName = "walalal";
+//        name = name.replaceAll("\\s",""); 
+//        myName = name;
         Recipe myres = new Recipe();
         for (int i = 0 ; i < recs.size(); i++)
             if (recs.get(i).getRecipeName().equals(name))

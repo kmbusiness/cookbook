@@ -17,7 +17,7 @@
         ResultSet rs = pst.executeQuery();
         if (rs.next()) {
             out.println("Valid login credentials");
-            String redirectURL = "http://localhost:8080/CookBook_v5/faces/recipe/index.xhtml";
+            String redirectURL = "http://localhost:8080/CookBook_v5/faces/home.xhtml";
             response.sendRedirect(redirectURL);
         } else {
             out.println("Invalid login credentials");

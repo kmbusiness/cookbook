@@ -67,7 +67,9 @@
                             <div class="panel-body">
                             </div>
                             <div class="panel-footer">
-                                <h:link value="#{j.recipeName}" outcome="#{RecipeManager.getView(value)}"/>
+                                <h:link value="#{j.recipeName}" outcome="#{RecipeManager.getView(value)}">
+                                        <f:param name="book" value="#{j.recipeName}"/>
+                                </h:link>
                             </div>
                         </div>
                     </div>
