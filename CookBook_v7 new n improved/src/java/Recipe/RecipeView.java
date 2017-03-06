@@ -49,11 +49,11 @@ public class RecipeView implements Serializable{
             while (rs.next()) {
                 Recipe rec = new Recipe();
                 rec.setUserName(rs.getString("userName"));
-                rec.setPublishedDate(rs.getDate("pushlishedDate"));
+                rec.setPushlishedDate(rs.getDate("pushlishedDate"));
                 rec.setRecipeName(rs.getString("recipeName"));
                 rec.setDescription(rs.getString("description"));
                 rec.setSteps(rs.getString("steps"));
-                rec.setRecipeID(rs.getLong("recipeID"));
+                rec.setRecipeID(rs.getString("recipeID"));
                 rec.setImage(rs.getString("Image"));
                 myList.add(rec);
             }

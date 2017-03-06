@@ -13,7 +13,7 @@
             <br/>
             <h:outputText value="#{RecipeView.thisRecipe.description}" />
             <br/>  
-            <h:commandButton id="backButton" value="Back" action="/index.xhtml" />
+            <h:button id="backButton" value="Back" outcome="/index?faces-redirect=true" />
         </h:form>
     </body>
 </html>
