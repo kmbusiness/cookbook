@@ -10,7 +10,7 @@ Create table recipe
 (
 	oID				varchar(20),
 	rName			varchar(40),
-    rID				char(4) Primary key,
+    rID				int NOT NULL Primary key auto_increment,
     rImage			varchar(500),
     rDescription	text(40000),
     rSteps			text(40000),
