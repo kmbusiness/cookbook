@@ -107,7 +107,7 @@
                                 <figure><img src="#{j.image}" alt="#{j.description}"></img></figure>
                                 <span><p>#{j.description}</p></span>
                                 <div class="recipe-title">
-                                    <h:link value="#{j.recipeName}" outcome="#{RecipeView.view()}">
+                                    <h:link value="#{j.recipeName}" outcome="#{RecipeManager.indexview()}">
                                         <f:param name="book" value="#{j.recipeName}"/>
                                     </h:link>
                                 </div>

@@ -14,10 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -40,7 +42,8 @@ public class RecipeManager implements Serializable {
     String myName = "";
     ArrayList<String> asd = new ArrayList<String>();
     List mySearch = new ArrayList<Recipe>();
-
+    String action = "";
+    boolean view = false;
     /**
      * Creates a new instance of Recipe
      */
@@ -54,6 +57,22 @@ public class RecipeManager implements Serializable {
         Connection con = null;
         ResultSet rs = null;
         init();
+    }
+
+    public String getAction() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
+	action = params.get("book");
+        for (int i = 0 ; i < recs.size(); i++) {
+            if (recs.get(i).getRecipeName().compareTo(action) == 0) {
+                thisRecipe = recs.get(i);
+            }
+        }
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
     }
 
     public List getMySearch() {
@@ -103,7 +122,8 @@ public class RecipeManager implements Serializable {
         return myName;
     }
 
-    public Recipe getThisRecipe() {
+    public Recipe getThisRecipe() {  
+        if (view) getAction();
         return thisRecipe;
     }
 
@@ -127,43 +147,20 @@ public class RecipeManager implements Serializable {
         return asd;
     }
 
-    @RequestScoped
-    public class ManageView implements Serializable {
-        private static final long serialVersionUID = 1L;
-        @ManagedProperty("#{param.book}")
-        String book;
-        List<Recipe> myList = new ArrayList<>();
-        Recipe thisRecipe = new Recipe();
-        public void getList() {
-            myList = getRecs();
-        }
-
-        public List<Recipe> getMyList() {
-            return myList;
-        }
-
-        public Recipe getThisRecipe() {
-            return thisRecipe;
-        }
-
-        public void setBook(String book) {
-            this.book = book;
-        }
-
-        public String getBook() {
-            return book;
-        }
-
-        public String view() {
-            for (int i = 0; i < myList.size(); i++) {
-                if (myList.get(i).getRecipeName().compareTo(book) == 0) {
-                    thisRecipe = myList.get(i);
-                }
-            }
-            return "MyView";
-        }
+    public String indexview() {
+        view = true;
+        return "/Recipe/RecipeView";
     }
-
+    
+    public String editview() {
+        return "/Recipe/RecipeView";
+    }
+    
+    public String edit() {
+        view = false;
+        return "/Recipe/RecipeEdit";
+    }
+    
     public String save() {
         SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -174,9 +171,7 @@ public class RecipeManager implements Serializable {
             ps = con.prepareStatement(sql);
             ps.setString(1, newRecipe.getUserName());
             String date = fmt.format(newRecipe.getPushlishedDate());
-            System.out.println(date  + " STIRNGGGGGGGGGGGG");
             java.sql.Date dt = java.sql.Date.valueOf(date);
-            
             ps.setDate(2, dt);
             ps.setString(3, newRecipe.getRecipeName());
             ps.setString(4, newRecipe.getDescription());
@@ -200,11 +195,10 @@ public class RecipeManager implements Serializable {
             if (recs.get(i).getRecipeName().equals(search))
                 mySearch.add(recs.get(i));
         }
-        System.out.println(mySearch + " STRINGGGGGGGGGGGGGGGGGGGGGGG");
         search = "";
         return "/indexSearch.xhtml?faces-redirect=true";
     }
-    
+
     public void init() {
         recs = new ArrayList<Recipe>();
         try {

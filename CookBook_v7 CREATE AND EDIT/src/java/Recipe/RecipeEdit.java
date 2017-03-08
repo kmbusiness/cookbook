@@ -13,33 +13,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.Serializable;
-import java.util.Map;
-import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Haba
  */
-@ManagedBean(name = "RecipeView")
+@ManagedBean(name = "RecipeEdit")
 @RequestScoped
-public class RecipeView implements Serializable{
+public class RecipeEdit implements Serializable{
     
     private static final long serialVersionUID = 2L;
-    @ManagedProperty("#{param.book}")
-    String book;
+    @ManagedProperty("#{param.b}")
+    String b;
     ArrayList<Recipe> myList = new ArrayList<>();
     PreparedStatement ps = null;
     Connection con = null;
     ResultSet rs = null;
     Recipe thisRecipe = new Recipe();
     
-    public RecipeView() {
-        thisRecipe = new Recipe();
+    public RecipeEdit() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/morecookbook?zeroDateTimeBehavior=convertToNull", "root", "123456");
@@ -67,10 +63,11 @@ public class RecipeView implements Serializable{
     
     public Recipe getThisRecipe() {
         for (int i = 0 ; i < myList.size(); i++) {
-            if (myList.get(i).getRecipeName().compareTo(book) == 0) {
+            if (myList.get(i).getRecipeName().compareTo(b) == 0) {
                 thisRecipe = myList.get(i);
             }
         }
+        System.out.println(myList + " STIRNGGGGGGGGGGGGGGGGGGGGGGGg");
         return thisRecipe;
     }
     
@@ -78,15 +75,23 @@ public class RecipeView implements Serializable{
         thisRecipe = p;
     }
     
-    public void setBook(String book) {
-        this.book = book;
+    public void setB(String b) {
+        this.b = b;
     }
 
-    public String getBook() {
-        return book;
+    public String getB() {
+        return b;
     }
     
-    public String view() {
-        return "/Recipe/RecipeView";
+    public String edit() {
+        return "/Recipe/RecipeEdit.xhtml";
+    }
+    
+    public String save() {
+        return "/Recipe/RecipeView.xhtml";
+    }
+    
+    public String cancel() {
+        return  "/Recipe/RecipeView.xhtml";
     }
 }

@@ -9,11 +9,13 @@
     </head>
     <body>
         <h:form styleClass="jsfcrud_list_form">
-            <h:outputText value="#{RecipeView.thisRecipe.recipeName}" />
-            <br/>
-            <h:outputText value="#{RecipeView.thisRecipe.description}" />
-            <br/>  
+            <h:outputText value="#{RecipeManager.thisRecipe.recipeName}"/>
+            <br/> <br/>
+            <h:outputText value="#{RecipeManager.thisRecipe.description}"/>
+            <br/> <br/>
             <h:button id="backButton" value="Back" outcome="/index?faces-redirect=true" />
+            <br/>
+            <h:button id="editButton" value="Edit" outcome="#{RecipeManager.edit()}"/>
         </h:form>
     </body>
 </html>
