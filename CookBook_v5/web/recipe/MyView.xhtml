@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+
+    </head>
+    <body>
+        <h:form styleClass="jsfcrud_list_form">
+            <h:outputText value="#{RecipeManager.myName}" />
+            <br/>
+            <h:outputText value="#{RecipeManager.thisRecipe.recipeName}" />
+            <br/>
+            <h:outputText value="#{RecipeManager.thisRecipe.description}" />
+            <br/>  
+            <h:commandButton id="backButton" value="Back" action="index.xhtml" />
+        </h:form>
+    </body>
+</html>
