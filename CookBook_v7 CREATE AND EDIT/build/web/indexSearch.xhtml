@@ -96,11 +96,11 @@
                 </div>
             </div>
         </div>
-        <ui:param name="wut" value="#{RecipeManager.rows}"/>
+        <ui:param name="wut" value="#{RecipeManager.mySearch.size()}"/>
         <!-- Rows -->
         <div id="content" class="container-fluid custom-boxes custom-image">
             <div class="row">
-                <ui:repeat var="j" value="#{RecipeManager.recs}" size = "#{wut}" >
+                <ui:repeat var="j" value="#{RecipeManager.mySearch}" size = "#{wut}" >
                     <div class="col-sm-3" id="">
                         <div class="panel panel-default">              
                             <div class="panel-body">
@@ -117,6 +117,8 @@
                 </ui:repeat>
             </div>
         </div>
+        eqwemqweopwqmepqwo
+
         <footer id="myFooter">
             <div class="container">
                 <ul>
@@ -134,5 +136,10 @@
         </footer>
         <h:outputScript library="js" name="jquery-3.1.1.min.js"/>
         <h:outputScript library="js" name="bootstrap.min.js"/>
+
+        <br/>
+        #{RecipeManager.search}
     </h:body>
+
+
 </html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h:form>
+            <h:panelGrid>
+                <h:outputLabel value="User Name: " />
+                <h:selectOneMenu value="#{RecipeManager.newRecipe.userName}">
+                    <f:selectItems value="#{OwnerManager.owners}"/>
+                </h:selectOneMenu>
+                <h:outputLabel value="Published Date: " />
+                <h:inputText value="#{RecipeManager.newRecipe.pushlishedDate}">
+                    <f:convertDateTime pattern="yyyy-MM-dd" />
+                </h:inputText>
+                <h:outputLabel value="Recipe Name: " />
+                <h:inputText value="#{RecipeManager.newRecipe.recipeName}"/>
+                <h:outputLabel value="Description: " />
+                <h:inputTextarea value="#{RecipeManager.newRecipe.description}"/>
+                <h:outputLabel value="Steps: " />
+                <h:inputTextarea value="#{RecipeManager.newRecipe.steps}"/>
+                <h:outputLabel value="Image: " />
+                <h:inputText value="#{RecipeManager.newRecipe.image}"/>
+                <h:outputLabel value="Recipe ID: " />
+                <h:inputText value="#{RecipeManager.newRecipe.recipeID}"/>
+                <h:commandButton id="submit" value="submit" action="#{RecipeManager.save()}" />
+                <h:commandButton value="Cancel" action="/index.xhtml" />
+            </h:panelGrid>
+        </h:form>
+    </body>
+</html>
